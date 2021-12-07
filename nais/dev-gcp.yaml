@@ -22,10 +22,18 @@ spec:
   replicas:
     min: 2
     max: 2
+  tokenx:
+    enabled: true
+  idporten:
+    sidecar:
+      enabled: true
+    enabled: true
+    clientUri: https://permitteringsportal.dev.nav.no/permitteringsportal
+    postLogoutRedirectURIs:
+      - https://permitteringsportal.dev.nav.no/permitteringsportal/logout-callback
   accessPolicy:
     outbound:
+      rules:
+        - application: permitteringsportal-api
       external:
         - host: dekoratoren.dev.nav.no
-  env:
-    - name: NODE_EXTRA_CA_CERTS
-      value: /etc/ssl/ca-bundle.pem
