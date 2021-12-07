@@ -14,10 +14,10 @@ spec:
   ingresses:
     - https://permitteringsportal.dev.nav.no/permitteringsportal
   liveness:
-    path: /permitteringsportal/api/internal/isAlive
+    path: /permitteringsportal/internal/isAlive
     initialDelay: 5
   readiness:
-    path: /permitteringsportal/api/internal/isReady
+    path: /permitteringsportal/internal/isReady
     initialDelay: 5
   replicas:
     min: 2
