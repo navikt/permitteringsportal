@@ -1,0 +1,54 @@
+name: Build and deploy
+
+on: [push]
+
+env:
+  IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
+
+jobs:
+  compile-test-and-build:
+    name: Build and run tests
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - uses: actions/cache@v1
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-node-cache-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-cache-
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+      - name: Build application
+        run: |
+          yarn run build
+      - uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: ${{ env.IMAGE }}
+
+  deploy-to-dev-gcp:
+    name: Deploy to dev-gcp
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/docker-fiks'
+    needs: compile-test-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_KEY_TEAM }}
+          CLUSTER: dev-gcp
+          VAR: version=${{ env.IMAGE }}
+          RESOURCE: nais/dev-gcp.yaml
+          PRINT_PAYLOAD: true
+

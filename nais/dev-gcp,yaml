@@ -1,0 +1,31 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: permitteringsportal
+  namespace: permittering-og-nedbemanning
+  labels:
+    team: permittering-og-nedbemanning
+  annotations:
+    nais.io/read-only-file-system: "false"
+spec:
+  image: {{ version }}
+  team: permittering-og-nedbemanning
+  port: 3000
+  ingresses:
+    - https://permitteringsportal.dev.nav.no/permitteringsportal
+  liveness:
+    path: /permitteringsportal/api/internal/isAlive
+    initialDelay: 5
+  readiness:
+    path: /permitteringsportal/api/internal/isReady
+    initialDelay: 5
+  replicas:
+    min: 2
+    max: 2
+  accessPolicy:
+    outbound:
+      external:
+        - host: dekoratoren.dev.nav.no
+  env:
+    - name: NODE_EXTRA_CA_CERTS
+      value: /etc/ssl/ca-bundle.pem
