@@ -3,7 +3,7 @@ const express = require('express');
 const app = express.Router();
 const path = require('path');
 
-const buildPath = path.join(__dirname, '../../../build');
+const buildPath = path.join(__dirname, '../../build');
 
 const getRouter = () => {
 
