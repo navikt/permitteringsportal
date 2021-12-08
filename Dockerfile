@@ -1,6 +1,7 @@
 FROM navikt/node-express:14
 
 WORKDIR /app
+COPY build/ build/
 COPY src/server/ src/server/
 
 WORKDIR /app/src/server
