@@ -1,4 +1,5 @@
 const { getHtmlWithDecorator } = require('./decorator-utils')
+const express = require('express');
 const app = express.Router();
 
 const getRouter = () => {
@@ -17,6 +18,8 @@ const getRouter = () => {
             res.sendFile(buildPath + '/index.html');
         }
     });
+
+    return app;
 }
 
 module.exports = { getRouter };

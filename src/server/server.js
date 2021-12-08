@@ -1,8 +1,8 @@
-const getRouter = require('./router')
+const {getRouter} = require('./router')
 const express = require('express');
 const app = express();
 
-const startServer = () => {s
+const startServer = () => {
 
     const router = getRouter();
     app.use('/', router)
