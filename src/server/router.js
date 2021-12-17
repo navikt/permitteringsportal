@@ -10,6 +10,11 @@ const getRouter = () => {
     app.get('/permitteringsportal/internal/isAlive', (req, res) => res.sendStatus(200));
     app.get('/permitteringsportal/internal/isReady', (req, res) => res.sendStatus(200));
 
+    app.use('/permitteringsportal', express.static(buildPath, { index: false }));
+    app.get('/', (req, res) => {
+        res.redirect(301, '/permitteringsportal');
+    });
+
     app.get('/permitteringsportal/*', async (req, res) => {
         try {
             res.send(await getHtmlWithDecorator(buildPath + '/index.html'));
