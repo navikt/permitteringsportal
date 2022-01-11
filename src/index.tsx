@@ -2,6 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app/App';
+import { worker } from './mocks/browser';
+
+if (true) {
+  worker.start({
+    serviceWorker: {
+      url: '/permitteringsportal/mockServiceWorker.js',
+    }
+  })
+}
+
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
+import Forside from './Forside/Forside';
+import LoginProvider from './LoginProvider';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Skjema for bekreftelse av arbeidsforhold</p>
-      </header>
-    </div>
+    <LoginProvider>
+      <Forside></Forside>
+    </LoginProvider>
   );
 }
 
