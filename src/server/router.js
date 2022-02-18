@@ -1,11 +1,12 @@
 const { getHtmlWithDecorator } = require('./decorator-utils')
 const express = require('express');
+const apiProxy = require('./apiProxy')
 const app = express.Router();
 const path = require('path');
 
 const buildPath = path.join(__dirname, '../../build');
 
-const getRouter = () => {
+const getRouter = (tokenXClient, tokenXIssuer) => {
 
     app.get('/permitteringsportal/internal/isAlive', (req, res) => res.sendStatus(200));
     app.get('/permitteringsportal/internal/isReady', (req, res) => res.sendStatus(200));
@@ -13,6 +14,14 @@ const getRouter = () => {
     app.use('/permitteringsportal', express.static(buildPath, { index: false }));
     app.get('/', (req, res) => {
         res.redirect(301, '/permitteringsportal');
+    });
+    apiProxy(app, tokenXClient, tokenXIssuer);
+    app.get('/permittering/login-callback', function (req, res) {
+        res.redirect('https://loginservice.dev.nav.no/login?redirect=https://permitteringsportal.dev.nav.no/permitteringsportal');
+    });
+
+    app.get('/permittering/logout-callback', function (req, res) {
+        res.redirect('https://loginservice.dev.nav.no/slo');
     });
 
     app.get('/permitteringsportal/*', async (req, res) => {
