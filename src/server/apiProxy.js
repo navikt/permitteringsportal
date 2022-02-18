@@ -8,6 +8,7 @@ const apiProxy = (app, tokenXClient, tokenXIssuer) => {
         ensureAuthenticated,
         proxy(`${BACKEND_BASEURL}`, {
             proxyReqPathResolver: (req) => {
+                console.log(`Proxyar request til ${BACKEND_API_PATH}${req.url}`)
                 return `${BACKEND_API_PATH}${req.url}`;
             },
             proxyReqOptDecorator: (options, req) => {
