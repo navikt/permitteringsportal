@@ -1,5 +1,5 @@
 const proxy = require('express-http-proxy');
-const { BACKEND_BASEURL, BACKEND_API_PATH } = require('./konstanter');
+const { BACKEND_BASEURL } = require('./konstanter');
 const { exchangeToken, ensureAuthenticated } = require('./tokenUtils');
 
 const apiProxy = (app, tokenXClient, tokenXIssuer) => {
@@ -8,8 +8,7 @@ const apiProxy = (app, tokenXClient, tokenXIssuer) => {
         ensureAuthenticated,
         proxy(`${BACKEND_BASEURL}`, {
             proxyReqPathResolver: (req) => {
-                console.log(`Proxyar request til ${BACKEND_API_PATH}${req.url}`)
-                return `${BACKEND_API_PATH}${req.url}`;
+                return `/permitteringsportal-api/api/${req.url}`;
             },
             proxyReqOptDecorator: (options, req) => {
                 return new Promise((resolve, reject) => {

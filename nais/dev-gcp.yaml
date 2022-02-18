@@ -42,7 +42,5 @@ spec:
       value: dev-gcp:permittering-og-nedbemanning:permitteringsportal-api
     - name: BACKEND_BASEURL
       value: http://permitteringsportal-api
-    - name: BACKEND_API_PATH
-      value: /permitteringsportal-api
     - name: LOGINSERVICE_LOGOUT_URL
       value: https://loginservice.dev.nav.no/slo

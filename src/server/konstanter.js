@@ -1,4 +1,3 @@
-const BACKEND_API_PATH = process.env.BACKEND_API_PATH || '/permitteringsportal-api';
 const BACKEND_BASEURL = process.env.BACKEND_BASEURL || 'http://localhost:8080';
 
 const testJwk = JSON.stringify({
@@ -32,6 +31,5 @@ module.exports = {
     TOKEN_X_WELL_KNOWN_URL,
     TOKEN_X_CLIENT_ID,
     TOKEN_X_PRIVATE_JWK,
-    BACKEND_API_PATH,
     BACKEND_BASEURL,
 };
