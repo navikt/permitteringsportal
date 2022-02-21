@@ -8,7 +8,7 @@ type Props = {
 }
 
 const Forside: FunctionComponent<Props> = () => {
-  const [organisasjoner, setOrganisasjoner] = useState(Array<Organisasjon>());
+  const [organisasjoner, setOrganisasjoner] = useState(Array<Organisasjon>(0));
 
   useEffect(() => {
     hentOrganisasjoner()
@@ -18,7 +18,7 @@ const Forside: FunctionComponent<Props> = () => {
         console.log("hmm")
         //setOrganisasjoner([])
       })
-  })
+  }, [])
 
   // console.log("organisasjoner", organisasjoner)
   return (
