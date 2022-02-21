@@ -14,16 +14,16 @@ const Forside: FunctionComponent<Props> = () => {
     hentOrganisasjoner()
       .then((organisasjoner) => {
         setOrganisasjoner(organisasjoner)
-      })
-      .catch((e) => {
-        setOrganisasjoner([])
+      },(error) => {
+        console.log("hmm")
+        //setOrganisasjoner([])
       })
   })
 
-  console.log("organisasjoner", organisasjoner)
+  // console.log("organisasjoner", organisasjoner)
   return (
     <div>
-      <p>Hello</p>
+      <p>Hello {organisasjoner}</p>
     </div>
   )
 }

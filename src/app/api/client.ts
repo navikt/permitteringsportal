@@ -15,15 +15,8 @@ export const sjekkInnlogget = async function(): Promise<Boolean> {
 }
 
 export const hentOrganisasjoner = async function(): Promise<Organisasjon[]> {
-    try {
-        const response = await axios.get('/permitteringsportal/api/organisasjoner');
-        if(response.status === 200) {
-            return response.data
-        }
-        return [];
-    } catch (e) {
-        console.log(e);
-        return [];
-    }
+    const response = await axios.get('/permitteringsportal/api/organisasjoner');
+    console.log("Hallo eller", response)
+    return response.data
 }
 
