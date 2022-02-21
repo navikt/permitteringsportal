@@ -6,6 +6,12 @@ export const handlers = [
     return res(
       ctx.status(200)
     )
+  }),
+
+  rest.get('/permitteringsportal/api/organisasjoner', (req, res, ctx) => {
+    return res(
+      ctx.status(200)
+    )
   })
 
 ]

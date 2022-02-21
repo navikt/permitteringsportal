@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Organisasjon } from "../../types/Organisasjon";
 
 export const sjekkInnlogget = async function(): Promise<Boolean> {
     try {
@@ -12,3 +13,17 @@ export const sjekkInnlogget = async function(): Promise<Boolean> {
         return false;
     }
 }
+
+export const hentOrganisasjoner = async function(): Promise<Organisasjon[]> {
+    try {
+        const response = await axios.get('/permitteringsportal/api/organisasjoner');
+        if(response.status === 200) {
+            return response.data
+        }
+        return [];
+    } catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
