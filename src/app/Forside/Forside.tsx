@@ -2,7 +2,6 @@ import { FunctionComponent, useEffect, useState } from "react";
 import { Organisasjon } from "../../types/Organisasjon";
 import { hentOrganisasjoner } from "../api/client";
 
-
 type Props = {
 
 }
