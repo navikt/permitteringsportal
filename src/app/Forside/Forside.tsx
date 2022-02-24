@@ -1,29 +1,15 @@
-import { FunctionComponent, useEffect, useState } from "react";
-import { Organisasjon } from "../../types/Organisasjon";
-import { hentOrganisasjoner } from "../api/client";
+import { BodyLong, ContentContainer } from "@navikt/ds-react";
+import { FunctionComponent } from "react";
 
 type Props = {
 
 }
 
 const Forside: FunctionComponent<Props> = () => {
-  const [organisasjoner, setOrganisasjoner] = useState(Array<Organisasjon>(0));
-
-  useEffect(() => {
-    hentOrganisasjoner()
-      .then((organisasjoner) => {
-        setOrganisasjoner(organisasjoner)
-      },(error) => {
-        console.log("hmm")
-        //setOrganisasjoner([])
-      })
-  }, [])
-
-  // console.log("organisasjoner", organisasjoner)
   return (
-    <div>
-      <p>Hello {organisasjoner}</p>
-    </div>
+    <ContentContainer className={"navds-story-content-container"}>
+      <BodyLong size="medium">-- Innhold --</BodyLong>
+    </ContentContainer>
   )
 }
 

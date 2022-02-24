@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "/permitteringsportal/",
   "dependencies": {
+    "@navikt/ds-css": "^0.15.9",
     "@navikt/ds-react": "^0.16.13",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

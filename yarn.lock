@@ -1510,6 +1510,11 @@
     outvariant "^1.2.0"
     strict-event-emitter "^0.2.0"
 
+"@navikt/ds-css@^0.15.9":
+  version "0.15.9"
+  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.15.9.tgz#c9aaf0ba8adff52d4b317acc35c8934699a9ca2b"
+  integrity sha512-grwo60R5GAcujclKR4/wKLXppvXjWafwJR4XFimf7Y2NH9hzwDlFO13KYl7zezmdbjNivtrLkOnExpOmrhr+jw==
+
 "@navikt/ds-icons@^0.8.4":
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/@navikt/ds-icons/-/ds-icons-0.8.4.tgz#82ba73cbc5704132ec2dd6e6faace3a2b9d6abff"
