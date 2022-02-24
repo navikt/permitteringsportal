@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Oppgave } from "../../types/Oppgave";
 import { Organisasjon } from "../../types/Organisasjon";
 
 export const sjekkInnlogget = async function(): Promise<Boolean> {
@@ -16,7 +17,10 @@ export const sjekkInnlogget = async function(): Promise<Boolean> {
 
 export const hentOrganisasjoner = async function(): Promise<Organisasjon[]> {
     const response = await axios.get('/permitteringsportal/api/organisasjoner');
-    console.log("Hallo eller", response)
     return response.data
 }
 
+export const hentOppgaver = async function(): Promise<Oppgave[]> {
+    const response = await axios.get('/permitteringsportal/api/oppgaver');
+    return response.data
+}
