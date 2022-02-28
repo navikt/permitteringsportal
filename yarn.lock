@@ -1510,10 +1510,10 @@
     outvariant "^1.2.0"
     strict-event-emitter "^0.2.0"
 
-"@navikt/ds-css@^0.15.9":
-  version "0.15.9"
-  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.15.9.tgz#c9aaf0ba8adff52d4b317acc35c8934699a9ca2b"
-  integrity sha512-grwo60R5GAcujclKR4/wKLXppvXjWafwJR4XFimf7Y2NH9hzwDlFO13KYl7zezmdbjNivtrLkOnExpOmrhr+jw==
+"@navikt/ds-css@^0.15.10":
+  version "0.15.10"
+  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.15.10.tgz#6743a6e927aaeda9767139faf69dbd500ac3ad49"
+  integrity sha512-SArfLUWqmVLkbNbTTLV3YgPldXR9iXqkGR4SPp0MkbzWC2AmdSb403YLnSZphBr/lIR7stu/y5YMm2FiRhtIDA==
 
 "@navikt/ds-icons@^0.8.4":
   version "0.8.4"
@@ -1522,10 +1522,10 @@
   dependencies:
     uuid "^8.3.2"
 
-"@navikt/ds-react@^0.16.13":
-  version "0.16.13"
-  resolved "https://registry.yarnpkg.com/@navikt/ds-react/-/ds-react-0.16.13.tgz#bafed4af9e3e8f0df381d239119b3d3a42ee326d"
-  integrity sha512-ImzgecfwvpA+sdyMZ/j6E12rlWEqM5w7PDOljgl2mXyIEPhX7kukizZ6RTo1FtR9seuhjQzVfm2htxxx/l2iXw==
+"@navikt/ds-react@^0.16.16":
+  version "0.16.16"
+  resolved "https://registry.yarnpkg.com/@navikt/ds-react/-/ds-react-0.16.16.tgz#371ffcaae702a3a8f48eb23b007e2b26f390dc34"
+  integrity sha512-64n0JBiTZIjCdcoUYLbJR/Gl8JQ/qhMcuU2v+Wx8q+82vH5cyIBaeG+4YpJkEMwb+ysgkCnFQP445Vn1wqx5Sw==
   dependencies:
     "@material-ui/core" "^4.12.3"
     "@navikt/ds-icons" "^0.8.4"

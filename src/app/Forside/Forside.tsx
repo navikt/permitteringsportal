@@ -1,12 +1,18 @@
-import { BodyShort, ContentContainer, Detail, Heading } from "@navikt/ds-react";
+import {BodyShort, Button, ContentContainer, Detail, Heading} from "@navikt/ds-react";
 import { FunctionComponent } from "react";
 import { Oppgaver } from "../Oppgaver/Oppgaver";
+import { sendOppgaver} from "../api/client";
 
 type Props = {
 
 }
 
 const Forside: FunctionComponent<Props> = () => {
+
+    const sendBekreftelseAvArbeidsforhold = () => {
+        sendOppgaver();
+    }
+
   return (
     <ContentContainer className={"navds-story-content-container"}>
       <Heading spacing={true} size={"large"} level={"1"}>
@@ -26,6 +32,9 @@ const Forside: FunctionComponent<Props> = () => {
           <li>Generel info om den ansatte</li>
         </ul>
       </BodyShort>
+        <Button variant="primary" size="medium" onClick={() => sendBekreftelseAvArbeidsforhold()}>
+            Button
+        </Button>
       <Oppgaver />
     </ContentContainer>
   )

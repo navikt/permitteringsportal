@@ -20,6 +20,10 @@ export const hentOrganisasjoner = async function(): Promise<Organisasjon[]> {
     return response.data
 }
 
+export const sendOppgaver = () => {
+    axios.post('/permitteringsportal/api/send-bekreftelse"')
+}
+
 export const hentOppgaver = async function(): Promise<Oppgave[]> {
     const response = await axios.get('/permitteringsportal/api/oppgaver');
     return response.data
