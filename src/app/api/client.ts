@@ -21,7 +21,7 @@ export const hentOrganisasjoner = async function(): Promise<Organisasjon[]> {
 }
 
 export const sendOppgaver = () => {
-    axios.post('/permitteringsportal/api/send-bekreftelse"')
+    axios.post('/permitteringsportal/api/send-bekreftelse')
 }
 
 export const hentOppgaver = async function(): Promise<Oppgave[]> {
