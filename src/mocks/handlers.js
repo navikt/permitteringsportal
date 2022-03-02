@@ -54,7 +54,7 @@ export const handlers = [
             "status" : "NY"
           },
           {
-            "navn" : "Hans Hansen",
+            "navn" : "Lilian Johansen",
             "mottat" : "2022-01-01",
             "fnr" : "28115049307",
             "status" : "NY"

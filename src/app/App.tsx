@@ -7,11 +7,13 @@ import { OrganisasjonsProvider } from './OrganisasjonsProvider';
 
 function App() {
   return (
-    <LoginProvider>
-      <OrganisasjonsProvider>
-        <Forside></Forside>
-      </OrganisasjonsProvider>
-    </LoginProvider>
+    <div className="app">
+      <LoginProvider>
+        <OrganisasjonsProvider>
+          <Forside></Forside>
+        </OrganisasjonsProvider>
+      </LoginProvider>
+    </div>
   );
 }
 
