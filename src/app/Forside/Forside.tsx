@@ -2,13 +2,13 @@ import { BodyShort, Button, Detail, Heading } from '@navikt/ds-react';
 import { FunctionComponent } from 'react';
 import Container from '../components/Container';
 import { Oppgaver } from '../Oppgaver/Oppgaver';
-// import { sendOppgaver} from "../api/client";
+import { sendOppgaver } from "../api/client";
 
 type Props = {};
 
 const Forside: FunctionComponent<Props> = () => {
   const sendBekreftelseAvArbeidsforhold = () => {
-    // sendOppgaver();
+    sendOppgaver();
   };
 
   return (
