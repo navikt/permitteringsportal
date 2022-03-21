@@ -17,11 +17,11 @@ const getRouter = (tokenXClient, tokenXIssuer) => {
     });
     apiProxy(app, tokenXClient, tokenXIssuer);
     app.get('/permitteringsportal/login-callback', function (req, res) {
-        res.redirect('https://loginservice.dev.nav.no/login?redirect=https://permitteringsportal.dev.nav.no/permitteringsportal');
+        res.redirect('https://permitteringsportal.dev.nav.no/permitteringsportal');
     });
 
     app.get('/permitteringsportal/logout-callback', function (req, res) {
-        res.redirect('https://loginservice.dev.nav.no/slo');
+        res.redirect('https://permitteringsportal.dev.nav.no/permitteringsportal');
     });
 
     app.get('/permitteringsportal/*', async (req, res) => {
